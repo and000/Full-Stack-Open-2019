@@ -1,0 +1,37 @@
+#created with https://www.websequencediagrams.com/ 
+
+title new note without spa
+
+note over browser:
+user types in note and hits submit button
+end note over browser
+
+browser->server: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note
+
+note over server:
+request is passed on to server. request contains new note text
+end note
+
+note over server:
+server creates a new valid note in the backend  
+end note
+
+server-->browser: HTTP status code 302 - found + redirect
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/notes
+server-->browser: HTML-page of notes
+
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.css
+server-->browser: main.css
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.js
+server-->browser: main.js
+
+note over browser:
+browser executes js code in main (to get the notes over json)
+end note
+
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/data.json
+server-->browser: [{ content: "HTML is easy", date: "2019-07-30" }, ...]
+
+note over browser:
+browser renders notes to display
+end note

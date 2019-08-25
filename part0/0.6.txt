@@ -1,0 +1,21 @@
+#created with https://www.websequencediagrams.com/ 
+
+title create note with spa
+
+note over browser:
+user fills form and hits submit
+end note
+
+browser->server: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note_spa
+
+note over server:
+server saves new note with 
+required attributes
+end note
+server-->browser: response 201 created
+
+note over browser:
+upon successful response, 
+browser re-renders with new list
+note attached
+end note
