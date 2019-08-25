@@ -1,0 +1,30 @@
+
+@baseurl = http://localhost:3003/api/users
+
+###
+
+GET {{baseurl}}/ HTTP/1.1
+content-type: application/json
+
+
+###
+
+POST {{baseurl}}/ HTTP/1.1
+content-type: application/json
+
+{
+    "username" : "and", 
+    "password" : "topsecret", 
+    "name" : "Andreas Schuller"
+}
+
+###
+
+POST {{baseurl}}/ HTTP/1.1
+content-type: application/json
+
+{
+    "username" : "pop", 
+    "password" : "supersecret", 
+    "name" : "Pepe Horst"
+}

@@ -1,0 +1,36 @@
+
+@baseurl = http://localhost:3003/api/login
+
+
+### correct PW
+### "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InBvcCIsImlkIjoiNWQxOGEwMThmMDhmM2IyOTg1ZjgxNTY1IiwiaWF0IjoxNTYxODk3MzM2fQ.boc0aKtP0Z_Phm8U7T7B2SquzwFQDtwR9Mz1oqLnQ-I"
+
+POST {{baseurl}}/ HTTP/1.1
+content-type: application/json
+
+{
+    "username" : "pop", 
+    "password" : "supersecret"
+}
+
+### incorrect PW
+
+POST {{baseurl}}/ HTTP/1.1
+content-type: application/json
+
+{
+    "username" : "pop", 
+    "password" : "megasecret"
+}
+
+
+### correct PW
+### "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFuZCIsImlkIjoiNWQxODljYmU2NWZjMjkyOGQ2MDIyYWI2IiwiaWF0IjoxNTYxODk5NTQ4fQ.LhL94vj5Kxwe4EvZUyMiK4qixjuVNs47_qzyaCrtmrs"
+
+POST {{baseurl}}/ HTTP/1.1
+content-type: application/json
+
+{
+    "username" : "and", 
+    "password" : "topsecret"
+}

@@ -1,0 +1,58 @@
+@baseurl = http://localhost:3003/api/blogs
+get {{baseurl}}/
+###
+
+POST {{baseurl}}/ HTTP/1.1
+content-type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InBvcCIsImlkIjoiNWQxOGEwMThmMDhmM2IyOTg1ZjgxNTY1IiwiaWF0IjoxNTYyMzUxMjIyfQ.dxvYagfi7LaEXRAhho32wuayFgQ5BpjyN8dRazhNwMw
+
+{
+    "title": "cool title",
+    "author": "Mr. Blog",
+    "url": "http://www.blog.com",
+    "likes": 100
+}
+
+###
+
+POST {{baseurl}}/ HTTP/1.1
+content-type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InBvcCIsImlkIjoiNWQxOGEwMThmMDhmM2IyOTg1ZjgxNTY1IiwiaWF0IjoxNTYyMzUxMjIyfQ.dxvYagfi7LaEXRAhho32wuayFgQ5BpjyN8dRazhNwMw
+
+{
+    "title": "super blog",
+    "author": "Mr. Bloggo",
+    "url": "http://www.superblog.com",
+    "likes": 0
+}
+
+###
+
+
+PUT {{baseurl}}/5d0fbf5db5293009eb1f9ffc HTTP/1.1
+content-type: application/json
+
+{
+    "title": "cool title title",
+    "author": "Mr. VLlog",
+    "url": "http://www.vlog.com",
+    "likes": 110
+}
+
+###
+
+
+DELETE {{baseurl}}/5d18a319c90f9429f8ac589d HTTP/1.1
+content-type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFuZCIsImlkIjoiNWQxODljYmU2NWZjMjkyOGQ2MDIyYWI2IiwiaWF0IjoxNTYxODk5NTQ4fQ.LhL94vj5Kxwe4EvZUyMiK4qixjuVNs47_qzyaCrtmrs
+
+
+###
+
+POST {{baseurl}}/5d1f8633a634263ff767adbb/comments HTTP/1.1
+content-type: application/json
+
+
+{
+    "text": "super interesting"
+}
