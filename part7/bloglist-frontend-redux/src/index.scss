@@ -1,0 +1,69 @@
+@import 'css/reset.css';
+
+h2 {
+  color: blueviolet;
+}
+
+h3 {
+  color: red;
+}
+
+body {
+  background-color: var(--main-bg-color);
+  margin: 1rem;
+}
+
+$superbase: #FFBB00;
+
+// sass variable map
+$colors: (
+  primary: #ff0000,
+  secondary: #0969A2, 
+  teriaki: lighten($superbase, 0%)
+);
+
+:root {
+  --main-bg-color: blanchedalmond;
+  --main-text-color: blue;
+  --col-test: #{ lighten( $superbase, 10% ) };
+
+  @each $name, $color in $colors {
+    --color-#{$name}: #{$color};
+    // see https://sass-lang.com/documentation/breaking-changes/css-vars
+  }
+}
+
+// dark theme
+:root[data-theme='dark'] {
+  --main-bg-color: black;
+  --main-text-color: blue;
+
+  // see https://medium.com/@harishv6665_49536/theming-with-react-js-or-any-in-minutes-with-css-variables-11d4ebecdb41
+}
+
+div {
+  color: black;
+}
+
+button {
+  // background-color: transparent;
+}
+
+nav {
+  background-color: lightblue;
+  padding: 0.5rem 0 0.5rem 0;
+  position: sticky;
+  top: 0.2rem;
+}
+
+.blog {
+  padding-top: 10px;
+  padding-left: 2;
+  border: solid 3px yellow;
+  margin-bottom: 5px;
+  border-radius: 5px;
+
+  div {
+    color: var(--main-bg-color);
+  }
+}
